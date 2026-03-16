@@ -1,0 +1,14 @@
+{
+  "name": "moi-forge-hacks-demo",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "MOI Forge Hacks demo — MAS0-style token with participant-centric state",
+  "scripts": {
+    "deploy": "node scripts/deploy.js",
+    "compile": "coco compile logic/asset.coco --format json"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.0",
+    "js-moi-sdk": "^0.7.0-rc10"
+  }
+}

@@ -1,0 +1,271 @@
+syntax: 1
+engine:
+  kind: PISA
+  flags: []
+  version: 0.5.0
+kind: logic
+elements:
+- ptr: 0
+  kind: state
+  data:
+    mode: logic
+    fields:
+    - slot: 0
+      label: name
+      type: string
+    - slot: 1
+      label: symbol
+      type: string
+- ptr: 1
+  kind: state
+  data:
+    mode: actor
+    fields:
+    - slot: 0
+      label: balance
+      type: u64
+- ptr: 2
+  deps:
+  - 0
+  kind: callable
+  data:
+    name: Init
+    mode: dynamic
+    kind: deploy
+    accepts:
+    - slot: 0
+      label: assetName
+      type: string
+    - slot: 1
+      label: assetSymbol
+      type: string
+    returns: []
+    executes:
+      bin:
+      - 144
+      - 0
+      - 0
+      - 4
+      - 1
+      - 0
+      - 155
+      - 0
+      - 1
+      - 159
+      - 0
+      - 144
+      - 0
+      - 1
+      - 4
+      - 1
+      - 1
+      - 155
+      - 0
+      - 1
+      - 159
+      - 0
+    catches: []
+- ptr: 3
+  deps:
+  - 1
+  kind: callable
+  data:
+    name: Seed
+    mode: dynamic
+    kind: enlist
+    accepts:
+    - slot: 0
+      label: initialBalance
+      type: u64
+    returns: []
+    executes:
+      bin:
+      - 132
+      - 0
+      - 145
+      - 1
+      - 0
+      - 0
+      - 4
+      - 2
+      - 0
+      - 155
+      - 1
+      - 2
+      - 159
+      - 1
+    catches: []
+- ptr: 4
+  deps:
+  - 1
+  kind: callable
+  data:
+    name: Mint
+    mode: dynamic
+    kind: invoke
+    accepts:
+    - slot: 0
+      label: amount
+      type: u64
+    returns: []
+    executes:
+      bin:
+      - 132
+      - 0
+      - 145
+      - 1
+      - 0
+      - 0
+      - 156
+      - 2
+      - 1
+      - 4
+      - 3
+      - 0
+      - 114
+      - 2
+      - 2
+      - 3
+      - 155
+      - 1
+      - 2
+      - 159
+      - 1
+    catches: []
+- ptr: 5
+  deps:
+  - 1
+  kind: callable
+  data:
+    name: Transfer
+    mode: dynamic
+    kind: invoke
+    accepts:
+    - slot: 0
+      label: receiver
+      type: identifier
+    - slot: 1
+      label: amount
+      type: u64
+    returns: []
+    executes:
+      bin:
+      - 132
+      - 0
+      - 145
+      - 1
+      - 0
+      - 0
+      - 156
+      - 2
+      - 1
+      - 4
+      - 3
+      - 1
+      - 115
+      - 2
+      - 2
+      - 3
+      - 155
+      - 1
+      - 2
+      - 159
+      - 1
+      - 4
+      - 0
+      - 0
+      - 145
+      - 1
+      - 0
+      - 0
+      - 156
+      - 2
+      - 1
+      - 4
+      - 3
+      - 1
+      - 114
+      - 2
+      - 2
+      - 3
+      - 155
+      - 1
+      - 2
+      - 159
+      - 1
+    catches: []
+- ptr: 6
+  deps:
+  - 1
+  kind: callable
+  data:
+    name: Balance
+    mode: static
+    kind: invoke
+    accepts: []
+    returns:
+    - slot: 0
+      label: bal
+      type: u64
+    executes:
+      bin:
+      - 132
+      - 0
+      - 145
+      - 1
+      - 0
+      - 0
+      - 5
+      - 1
+      - 0
+      - 158
+      - 1
+    catches: []
+- ptr: 7
+  deps:
+  - 0
+  kind: callable
+  data:
+    name: Name
+    mode: static
+    kind: invoke
+    accepts: []
+    returns:
+    - slot: 0
+      label: n
+      type: string
+    executes:
+      bin:
+      - 144
+      - 0
+      - 0
+      - 5
+      - 0
+      - 0
+      - 158
+      - 0
+    catches: []
+- ptr: 8
+  deps:
+  - 0
+  kind: callable
+  data:
+    name: Symbol
+    mode: static
+    kind: invoke
+    accepts: []
+    returns:
+    - slot: 0
+      label: s
+      type: string
+    executes:
+      bin:
+      - 144
+      - 0
+      - 1
+      - 5
+      - 0
+      - 0
+      - 158
+      - 0
+    catches: []

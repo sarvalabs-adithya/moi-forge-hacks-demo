@@ -1,0 +1,45 @@
+// MOI Hacks demo: MAS0-style token in Cocolang.
+// Participant-centric: each participant holds their OWN balance.
+
+coco AssetLogic
+
+// Token metadata lives on the logic (shared, set once at deploy).
+state logic:
+    name   String
+    symbol String
+
+// Per-participant balance: each actor carries their own.
+state actor:
+    balance U64
+
+// Runs once at deployment: set the token's name and symbol.
+endpoint deploy Init(assetName String, assetSymbol String):
+    mutate assetName -> AssetLogic.Logic.name
+    mutate assetSymbol -> AssetLogic.Logic.symbol
+
+// Runs once per actor on first interaction: give them an initial balance.
+endpoint enlist Seed(initialBalance U64):
+    mutate initialBalance -> AssetLogic.Sender.balance
+
+// Increase the caller's own balance.
+endpoint dynamic Mint(amount U64):
+    mutate bal <- AssetLogic.Sender.balance:
+        bal += amount
+
+// Sender transfers to receiver; both must be participants in the interaction.
+// Underflow on senderBal naturally guards against insufficient funds.
+endpoint dynamic Transfer(receiver Identifier, amount U64):
+    mutate senderBal <- AssetLogic.Sender.balance:
+        senderBal -= amount
+    mutate receiverBal <- AssetLogic.Actor(receiver).balance:
+        receiverBal += amount
+
+// Read-only endpoints (static = no state mutation).
+endpoint static Balance() -> (bal U64):
+    observe bal <- AssetLogic.Sender.balance
+
+endpoint static Name() -> (n String):
+    observe n <- AssetLogic.Logic.name
+
+endpoint static Symbol() -> (s String):
+    observe s <- AssetLogic.Logic.symbol
