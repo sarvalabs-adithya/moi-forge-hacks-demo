@@ -68,8 +68,9 @@ Your submission must include:
 
 ## Materials
 
-- [Kickoff Slide Deck (PPTX)](./docs/MOI_Hacks_Deck.pptx)
-- [Hackathon Playbook (DOCX)](./docs/MOI_Hacks_Playbook.docx)
+- [Kickoff Slide Deck (PDF)](./docs/MOI_Hacks_Deck.pdf) — view in browser on GitHub
+- [Hackathon Playbook (DOCX)](./docs/MOI_Hacks_Playbook.docx) · *(PDF: run `./scripts/docs-to-pdf.sh` to generate, then commit `docs/MOI_Hacks_Playbook.pdf`)*
+- [Deck (PPTX)](./docs/MOI_Hacks_Deck.pptx)
 
 ---
 
