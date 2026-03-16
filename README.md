@@ -45,7 +45,7 @@ Build a bridge between MOI and another chain. Design a mechanism where participa
 
 ## Submission
 
-Submit your project by filling out this form: **[Submission Form — TBD]()**
+Submit your project by filling out this form: **[Presidency College MOI Forge submission](https://docs.google.com/forms/d/e/1FAIpQLSepNda4T0VtAP6yRuwvaHWgbC8oo2Vs5DtyFheeeZFUWtceEA/viewform?usp=sharing)**
 
 Your submission must include:
 
@@ -101,6 +101,6 @@ This is the heart of understanding why MOI is different:
 
 ## Discord
 
-All coordination, team formation, office hours, and Q&A happen on Discord.
+All coordination, team formation, office hours, and Q&A happen on Discord. After joining, head to **#dev-chat**.
 
-**[Join the Discord — TBD]()**
+**[Join the Discord](https://discord.gg/VTwKsygQ)**
