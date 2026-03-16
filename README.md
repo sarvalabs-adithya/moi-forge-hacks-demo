@@ -69,7 +69,7 @@ Your submission must include:
 ## Materials
 
 - [Kickoff Slide Deck (PPTX)](./docs/MOI_Hacks_Deck.pptx)
-- [Hackathon Playbook (PDF)](./docs/MOI_Hacks_Playbook.pdf)
+- [Hackathon Playbook (DOCX)](./docs/MOI_Hacks_Playbook.docx)
 
 ---
 
