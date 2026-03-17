@@ -68,9 +68,10 @@ Your submission must include:
 
 ## Materials
 
-- [Kickoff Slide Deck (PDF)](./docs/MOI_Hacks_Deck.pdf) — view in browser on GitHub
-- [Hackathon Playbook (DOCX)](./docs/MOI_Hacks_Playbook.docx) · *(PDF: run `./scripts/docs-to-pdf.sh` to generate, then commit `docs/MOI_Hacks_Playbook.pdf`)*
-- [Deck (PPTX)](./docs/MOI_Hacks_Deck.pptx)
+Latest deck and playbook (PDFs viewable on GitHub):
+
+- [Kickoff Slide Deck (PDF)](./docs/MOI_Forge_Hacks_deck.pdf)
+- [Hackathon Playbook (PDF)](./docs/MOI_Hacks_Playbook.pdf)
 
 ---
 
@@ -97,6 +98,13 @@ This is the heart of understanding why MOI is different:
 | js-moi-sdk Docs | [js-moi-sdk.docs.moi.technology](https://js-moi-sdk.docs.moi.technology) |
 | Voyage Explorer & Faucet | [voyage.moi.technology](https://voyage.moi.technology) |
 | GitHub — Sarvalabs | [github.com/sarvalabs](https://github.com/sarvalabs) |
+
+---
+
+## Security
+
+- **npm audit:** In `moi-dapp/`, `npm audit` reports **15 low-severity** issues. All are **transitive** (inside `js-moi-sdk` and its dependency `elliptic`). There is no fix available from this repo; upstream would need to update dependencies. For hackathon use with testnet only, this is acceptable.
+- **Secrets:** Never commit `.env` or mnemonics. Use testnet-only credentials for deploy scripts.
 
 ---
 
